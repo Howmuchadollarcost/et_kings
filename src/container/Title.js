@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Joiner } from "../middleware/middleFunc";
 import { useLittera } from "react-littera";
 
-import {device} from '../middleware/device';
-
 const StartTitle = styled.div`
   font-size: 5em;
   text-transform: uppercase;
@@ -15,8 +13,13 @@ const StartTitle = styled.div`
     );
   }}
 
-  @media only screen and ${device.mobileS}{
-    font-size: 2rem;
+  @media only screen and (max-width: 705px){
+    font-size:3em;
+    transition: 1s all ease;
+  }
+  @media only screen and (max-width: 415px){
+    font-size:2em;
+    transition: 1s all ease;
   }
 `;
 

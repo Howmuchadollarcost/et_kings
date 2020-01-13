@@ -5,6 +5,10 @@ const Group = styled.div`
   width: 175px;
   display: inline-block;
   padding: 3em;
+  @media only screen and (max-width: 705px){
+    padding: 5px;
+    transition: 1s all ease;
+  }
 `;
 
 const Label = styled.h3`
