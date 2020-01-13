@@ -25,7 +25,6 @@ const Container = styled.div`
 function App() {
   const [language, setLanguage] = useState("en_US");
   const [darkMode, setDarkMode] = useState(false);
-
   const languages = ["en_US", "am_ET"];
 
   const nextLanguage = () =>
@@ -36,7 +35,7 @@ function App() {
       <LitteraProvider language={language}>
         {/* <Child translations={translations}/> */}
         <Container toggle={darkMode}>
-            <ChangeLang nextLanguage={nextLanguage} translations={translations} />
+            <ChangeLang nextLanguage={nextLanguage} translations={translations}  language={language} />
             <Toggle changeBC={changeBC} checked={darkMode} />
             <Title toggle={darkMode} translations={translations} />
         </Container>
@@ -61,9 +60,10 @@ const Toggle = props => {
 };
 
 const ChangeLang = (props) =>{
+  console.log(props.language === "en_US")
     return (
         <button className="btn" onClick={() => props.nextLanguage()}>
-            Change Language
+            {(props.language === "en_US") ? "አማርኛ" : "English"}
         </button>
     )
 }

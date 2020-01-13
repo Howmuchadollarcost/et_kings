@@ -67,8 +67,8 @@ input:checked + .slider:before {
 
 .btn{
   position:fixed;
-  top:10px;
-  left: 10px;
+  top:0px;
+  left: 0px;
   border: none;
   background-color: #4CAF50;
   color:#fff;
@@ -78,4 +78,7 @@ input:checked + .slider:before {
   display: inline-block;
   cursor: pointer;
   z-index: 1000;
+  border-radius: 0 0em 1em 0;
+  width:100px;
+  height:40px;
 }
