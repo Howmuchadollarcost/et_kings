@@ -25,7 +25,6 @@ const Card = styled.div`
 
 //max-width: 500px, height:575px:
 
-
 const BioContainer = styled.div`
   width: 550px;
   color: rgba(255, 255, 255, 0.8);
