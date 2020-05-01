@@ -15,7 +15,7 @@ const Foot = styled.div`
 function Footer() {
     return (
         <Foot>
-            <span>@Ethiopification</span>
+            <span>Muluberhan Yonas</span>
         </Foot>
     );
 }

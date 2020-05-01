@@ -60,7 +60,6 @@ const Toggle = props => {
 };
 
 const ChangeLang = (props) =>{
-  console.log(props.language === "en_US")
     return (
         <button className="btn" onClick={() => props.nextLanguage()}>
             {(props.language === "en_US") ? "አማርኛ" : "English"}
