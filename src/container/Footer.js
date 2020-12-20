@@ -13,11 +13,11 @@ const Foot = styled.div`
 `
 
 function Footer() {
-    return (
-        <Foot>
-            <span>Muluberhan Yonas</span>
-        </Foot>
-    );
+  return (
+    <Foot>
+      <span>Muluberhan Yonas</span>
+    </Foot>
+  );
 }
 
 export default Footer;

@@ -113,31 +113,30 @@ const King = styled.div`
 //height:185px, width:150px,
 
 function CardCont(props) {
-  const {image,name,bornName,reign,house,horse,religion} = props.translation[0];
-
+  const { image, name, bornName, reign, house, horse, religion } = props.translation[0];
   return (
     <>
-    <Card toggle={props.toggle}>
-      <King>
-        <img src={image} alt={name} />
-      </King>
+      <Card toggle={props.toggle}>
+        <King>
+          <img src={image} alt={name} />
+        </King>
 
-      <Name toggle={props.toggle}>{name}</Name>
+        <Name toggle={props.toggle}>{name}</Name>
 
-      <BioContainer toggle={props.toggle}>
-        <Group label={"Born Name"} desc={bornName}></Group>
-        <Group label={"Reign"} desc={reign}></Group>
-        <Group label={"House"} desc={house}></Group>
-        {
-          horse ? (
-            <Group label={"Horse Name"} desc={horse}></Group>
-          ):
-          null
-        }
+        <BioContainer toggle={props.toggle}>
+          <Group label={"Born Name"} desc={bornName}></Group>
+          <Group label={"Reign"} desc={reign}></Group>
+          <Group label={"House"} desc={house}></Group>
+          {
+            horse ? (
+              <Group label={"Horse Name"} desc={horse}></Group>
+            ) :
+              null
+          }
 
-        <Group label={"Religion"} desc={religion}></Group>
-      </BioContainer>
-    </Card>
+          <Group label={"Religion"} desc={religion}></Group>
+        </BioContainer>
+      </Card>
     </>
   );
 }

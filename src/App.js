@@ -35,9 +35,9 @@ function App() {
       <LitteraProvider language={language}>
         {/* <Child translations={translations}/> */}
         <Container toggle={darkMode}>
-            <ChangeLang nextLanguage={nextLanguage} translations={translations}  language={language} />
-            <Toggle changeBC={changeBC} checked={darkMode} />
-            <Title toggle={darkMode} translations={translations} />
+          <ChangeLang nextLanguage={nextLanguage} translations={translations} language={language} />
+          <Toggle changeBC={changeBC} checked={darkMode} />
+          <Title toggle={darkMode} translations={translations} />
         </Container>
 
         <Cards darkMode={darkMode} translations={translations} />
@@ -59,12 +59,12 @@ const Toggle = props => {
   );
 };
 
-const ChangeLang = (props) =>{
-    return (
-        <button className="btn" onClick={() => props.nextLanguage()}>
-            {(props.language === "en_US") ? "አማርኛ" : "English"}
-        </button>
-    )
+const ChangeLang = (props) => {
+  return (
+    <button className="btn" onClick={() => props.nextLanguage()}>
+      {(props.language === "en_US") ? "አማርኛ" : "English"}
+    </button>
+  )
 }
 
 export default App;

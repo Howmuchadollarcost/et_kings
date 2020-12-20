@@ -17,9 +17,9 @@ const Container = styled.div`
 function Cards(props) {
   const [translated] = useLittera(props.translations);
   const toArr = Object.entries(translated).filter(el => el[0] !== "title");
-  return toArr.map((kings,i) => (
+  return toArr.map((kings, i) => (
     <Container key={i} toggle={props.darkMode}>
-        <Card toggle={props.darkMode} translation={kings[1]} />
+      <Card toggle={props.darkMode} translation={kings[1]} />
     </Container>
   ));
 }
