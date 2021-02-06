@@ -40,7 +40,7 @@ function App() {
           <Title toggle={darkMode} translations={translations} />
         </Container>
 
-        <Cards darkMode={darkMode} translations={translations} />
+        <Cards language={language} darkMode={darkMode} translations={translations} />
       </LitteraProvider>
 
       <Footer />
