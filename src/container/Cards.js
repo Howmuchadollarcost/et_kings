@@ -10,18 +10,22 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${props => {
-    return props.toggle ? "#10171E" : "#fff";
-  }};
+		return props.toggle ? "#10171E" : "#fff";
+	}};
+	
+	@media only screen and (max-width: 705px){
+		height: 100%;
+  }
 `;
 
 function Cards(props) {
-  const [translated] = useLittera(props.translations);
-  const toArr = Object.entries(translated).filter(el => el[0] !== "title");
-  return toArr.map((kings, i) => (
-    <Container key={i} toggle={props.darkMode}>
-      <Card toggle={props.darkMode} translation={kings[1]} />
-    </Container>
-  ));
+	const [translated] = useLittera(props.translations);
+	const toArr = Object.entries(translated).filter(el => el[0] !== "title");
+	return toArr.map((kings, i) => (
+		<Container key={i} toggle={props.darkMode}>
+			<Card language={props.language} toggle={props.darkMode} translation={kings[1]} />
+		</Container>
+	));
 }
 
 export default Cards;

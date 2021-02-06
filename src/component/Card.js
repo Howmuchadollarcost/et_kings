@@ -9,21 +9,20 @@ const Card = styled.div`
   padding: 20px;
   border-radius: 10px;
   background-color: ${props => {
-    return props.toggle ? "#15202B" : "#191b21";
-  }};
+		return props.toggle ? "#15202B" : "#191b21";
+	}};
   height: 500px;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 
   @media only screen and (max-width: 705px){
-    max-width:400px;
+    max-width:300px;
     height:600px;
-    transition: 1s all ease;
+		margin-bottom: 100px;
   }
 
 `;
 
-//max-width: 500px, height:575px:
 
 const BioContainer = styled.div`
   width: 550px;
@@ -35,8 +34,8 @@ const BioContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   background: ${props => {
-    return props.toggle ? "#182430" : "#2d2f35";
-  }};
+		return props.toggle ? "#182430" : "#2d2f35";
+	}};
 
   @media only screen and (max-width: 705px){
     width:100%;
@@ -62,11 +61,11 @@ const Name = styled.h1`
   text-align: center;
   line-height: 1em;
   ${props => {
-    return (
-      Joiner("color", "#fff", "#111", props) +
-      Joiner("text-shadow", null, "0.05em 0 0 #eee, 0.1em 0 0 #123", props)
-    );
-  }}
+		return (
+			Joiner("color", "#fff", "#111", props) +
+			Joiner("text-shadow", null, "0.05em 0 0 #eee, 0.1em 0 0 #123", props)
+		);
+	}}
   @media only screen and (max-width: 705px){
     font-size:1.8em;
     top: -50px;
@@ -107,38 +106,39 @@ const King = styled.div`
     transition: 1s all ease;
   }
 
-
 `;
 
 //height:185px, width:150px,
 
 function CardCont(props) {
-  const { image, name, bornName, reign, house, horse, religion } = props.translation[0];
-  return (
-    <>
-      <Card toggle={props.toggle}>
-        <King>
-          <img src={image} alt={name} />
-        </King>
+	const { image, name, bornName, reign, house, horse, religion } = props.translation[0];
+	const { language } = props;
+	return (
+		<>
+			<Card toggle={props.toggle}>
+				<King>
+					<img src={image} alt={name} />
+				</King>
 
-        <Name toggle={props.toggle}>{name}</Name>
+				<Name toggle={props.toggle}>{name}</Name>
 
-        <BioContainer toggle={props.toggle}>
-          <Group label={"Born Name"} desc={bornName}></Group>
-          <Group label={"Reign"} desc={reign}></Group>
-          <Group label={"House"} desc={house}></Group>
-          {
-            horse ? (
-              <Group label={"Horse Name"} desc={horse}></Group>
-            ) :
-              null
-          }
+				<BioContainer toggle={props.toggle}>
+					<Group label={language === "en_US" ? "Born Name" : "ሙሉ ስም"} desc={bornName}></Group>
+					<Group label={language === "en_US" ? "Reign" : "ግዛት"} desc={reign}></Group>
+					<Group label={language === "en_US" ? "House" : "ሥርወ-መንግሥት"} desc={house}></Group>
+					{
+						horse ? (
+							<Group label={language === "en_US" ? "Horse Name" : "የፈረስ ስም"} desc={horse}></Group>
+						) :
+							null
+					}
 
-          <Group label={"Religion"} desc={religion}></Group>
-        </BioContainer>
-      </Card>
-    </>
-  );
+					<Group label={language === "en_US" ? "Religion" : "ሀይማኖት"} desc={religion}></Group>
+					<Group label={language === "en_US" ? "More info." : "ተጨማሪ መረጃ"}></Group>
+				</BioContainer>
+			</Card>
+		</>
+	);
 }
 
 
